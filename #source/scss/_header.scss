@@ -10,6 +10,16 @@
     &.header-active {
         background-color: rgba(0, 0, 0, .7);
     }
+
+    &.white {
+        .header__menu ul>li a {
+            color: #121212;
+        }
+
+        &.header-active {
+            background-color: rgba(255, 255, 255, .99);
+        }
+    }
 }
 
 .header__logo {
@@ -67,9 +77,11 @@
     .header {
         height: 90px;
     }
+
     .header__logo a {
         width: 70px;
     }
+
     .header__menu {
         position: fixed;
         overflow: auto;
@@ -83,11 +95,13 @@
         background-color: #fff;
         transform: translateX(100%);
         transition: .6s .3s;
-        ul{
+
+        ul {
             flex-direction: column;
             align-items: center;
             width: 100%;
             height: 100%;
+
             >li a {
                 font-weight: 700;
                 font-size: 16px;
@@ -96,16 +110,19 @@
                 opacity: 0;
                 transition: .2s;
             }
+
             >li+li {
                 margin-left: 0px;
                 margin-top: 30px;
             }
         }
-        &.active{
+
+        &.active {
             opacity: 1;
             transform: translateX(0%);
             transition: .6s;
-            ul>li a{
+
+            ul>li a {
                 opacity: 1;
                 transition: 1s .5s;
             }
@@ -158,6 +175,57 @@
                 background: #121212;
                 top: 50%;
                 transform: rotate(315deg);
+            }
+        }
+    }
+
+    .header.white {
+        .burger-btn {
+            background: transparent;
+            position: relative;
+            z-index: 55;
+            display: block;
+            height: 25px;
+            width: 40px;
+
+            &:before,
+            &:after {
+                background: #121212;
+                backface-visibility: hidden;
+                content: "";
+                height: 3px;
+                border-radius: 5px;
+                left: 0;
+                transition: 0.75s;
+                width: 30px;
+            }
+
+            &:before {
+                box-shadow: #121212 0 8px 0 0;
+                position: absolute;
+                top: 0;
+            }
+
+            &:after {
+                position: absolute;
+                top: calc(100% - 9px);
+            }
+
+            &.active {
+
+                &:before {
+                    background: #121212;
+                    box-shadow: #121212 0 8px 0 0;
+                    box-shadow: transparent 0 0 0 0;
+                    top: 50%;
+                    transform: rotate(225deg);
+                }
+
+                &:after {
+                    background: #121212;
+                    top: 50%;
+                    transform: rotate(315deg);
+                }
             }
         }
     }
