@@ -19,6 +19,11 @@ $(function () {
         $('.header__menu').removeClass('active');
     });
 
+    //  LANG MENU -------------------------------- //
+    $('.current-lang').on('click', function () {
+        $('.dropdown').toggleClass('active');
+    });
+
     // POPUP ---------------------------------------------- //
 
     $('.popup_btn').on('click', function () {
