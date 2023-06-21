@@ -195,12 +195,20 @@
 
 // RESPONSIVE ----------------------------------------------- //
 
-@media (max-width:1199.8px) {
+@media (max-width:1399.8px) {
     .header__menu ul>li+li {
-        margin-left: 35px;
+        margin-left: 30px;
     }
     .header__lang {
         margin-left: 60px;
+    }
+}
+@media (max-width:1199.8px) {
+    .header__menu ul>li+li {
+        margin-left: 18px;
+    }
+    .header__lang {
+        margin-left: 40px;
     }
 }
 
