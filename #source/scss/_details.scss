@@ -1,0 +1,258 @@
+.details {
+    padding: 170px 0 0px;
+}
+
+.details__title {
+    margin-bottom: 40px;
+    @include secttitle;
+
+    h1 {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 160%;
+    }
+}
+
+.details__inner {
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 16px rgba(140, 140, 140, 0.15);
+    border-radius: 15px;
+    display: flex;
+}
+
+.details__col {
+    width: 50%;
+}
+
+.details__col-head {
+    padding: 25px 61px;
+    background: #005C47;
+    border-radius: 15px 0 0 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+        text-align: center;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 160%;
+        color: #FFFFFF;
+        margin: 0 22px;
+    }
+}
+
+.details__head-icon {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #FFFFFF;
+
+    img {
+        width: 28px;
+        background-size: cover;
+    }
+}
+
+.details__col-content {
+    padding: 20px 25px 50px 61px;
+
+    p {
+        font-family: 'MyriadPro';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 198%;
+
+        &+p {
+            margin-top: 30px;
+        }
+    }
+}
+
+.details__col:nth-child(2) {
+    .details__col-head {
+        border-radius: 0 15px 15px 0;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 90%;
+            background-image: url(../img/svg/vector_white_details.svg);
+            background-size: cover;
+        }
+    }
+
+    .details__col-content {
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 95%;
+            background-image: url(../img/svg/vector_green_details.svg);
+            background-size: cover;
+        }
+    }
+}
+
+
+
+//  RESPONSIVE ------------------------------------- //
+@media (max-width:1399.8px) {
+    .details {
+        padding: 145px 0 0px;
+    }
+
+    .details__col-head {
+        padding: 25px 25px;
+    }
+
+    .details__col-content {
+        padding: 20px 25px 40px 40px;
+    }
+}
+
+@media (max-width:1199.8px) {
+    .details {
+        padding: 130px 0 0px;
+    }
+
+    .details__col-head h2 {
+        font-size: 20px;
+        margin: 0px 10px;
+    }
+
+    .details__head-icon {
+        width: 38px;
+        height: 38px;
+
+        img {
+            width: 24px;
+        }
+    }
+
+    .details__col-content p+p {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width:991.8px) {
+    .details__col-head {
+        padding: 25px 40px;
+    }
+
+    .details {
+        padding: 100px 0 0px;
+    }
+
+    .details__col {
+        width: 100%;
+    }
+
+    .details__inner {
+        flex-wrap: wrap;
+    }
+
+    .details__col-head {
+        border-radius: 15px;
+    }
+
+    .details__col:nth-child(1) {
+        .details__col-content {
+            padding-bottom: 120px;
+        }
+    }
+
+    .details__col:nth-child(2) {
+        .details__col-head {
+            border-radius: 15px;
+        }
+
+        .details__col-head:before {
+            display: none;
+        }
+
+        .details__col-content:before {
+            top: -180px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 80%;
+            height: 2px;
+            background-image: url(../img/svg/vector_green_details_mobile.svg);
+        }
+    }
+}
+
+@media (max-width:767.8px) {
+    .details__col-head h2 {
+        font-size: 18px;
+    }
+
+    .details__col-content p {
+        font-size: 16px;
+    }
+
+    .details__col:nth-child(2) .details__col-content:before {
+        top: -170px;
+        width: 90%;
+    }
+}
+
+@media (max-width:575.8px) {
+    .details__col:nth-child(2) .details__col-content:before {
+        top: -130px;
+    }
+
+    .details__col-content {
+        padding: 30px 20px 50px 20px;
+    }
+
+    .details__col-head {
+        padding: 15px 20px;
+    }
+
+    .details__col:first-child .details__col-content {
+        padding-bottom: 100px;
+    }
+
+    .details__col-head h2 {
+        font-size: 15px;
+    }
+
+    .details__head-icon {
+        width: 32px;
+        height: 32px;
+
+        img {
+            width: 21px;
+        }
+    }
+}
+
+@media (max-width:375px) {
+
+    .details__col-content p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width:350px) {
+    .details__col-head h2 {
+        font-size: 13px;
+    }
+}

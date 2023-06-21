@@ -2,7 +2,7 @@
 $(function () {
     // change header on scroll --------------
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
+        if ($(this).scrollTop() > 70) {
             $(".header").addClass("header-active");
         } else {
             $(".header").removeClass("header-active");
@@ -166,6 +166,44 @@ $(function () {
         ]
     });
 
+    // certificates slider --------------------------------- //
+    $('.certificates__slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        speed: 500,
+        // cssEase: 'linear',
+        // autoplay: true,
+        // autoplaySpeed: 700,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2.5,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    infinite: false
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1.5,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    infinite: false
+                }
+            }
+        ]
+    });
+
     //  INPUT NUMBER MASK ------------------------ //
     if ($(".phoneinp").length) {
         $('.phoneinp').inputmask({
@@ -174,6 +212,16 @@ $(function () {
             showMaskOnFocus: true,
         });
     }
+
+    // FANCYBOX ------------------ //
+    Fancybox.bind('[data-fancybox]', {
+        contentClick: "iterateZoom",
+        Images: {
+            Panzoom: {
+                maxScale: 2,
+            },
+        },
+    });
 
     //  AOS  ---------------------------------------- //
     AOS.init({

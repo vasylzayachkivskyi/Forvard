@@ -8,15 +8,17 @@
     transition: .4s;
 
     &.header-active {
-        // background-color: rgba(0, 0, 0, .7);
         background-color: rgba(255, 255, 255, .99);
 
         .header__menu ul>li a {
             color: #121212;
+
+            &:after {
+                background-color: #121212;
+            }
         }
 
         .header__lang {
-
             svg path {
                 stroke: #121212;
             }
@@ -27,12 +29,6 @@
         }
 
         .burger-btn {
-            background: transparent;
-            position: relative;
-            z-index: 55;
-            display: block;
-            height: 25px;
-            width: 40px;
 
             &:before,
             &:after {
@@ -146,6 +142,7 @@
 
     .current-lang {
         padding-right: 20px;
+        text-transform: uppercase;
     }
 
     .current-lang svg {
@@ -168,8 +165,14 @@
         padding: 10px 20px 10px 15px;
         box-shadow: 1px 1px 4px rgba(#000, .4);
 
-        span {
+        li {
             color: #121212;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 21px;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
             transition: .3s;
 
             &:hover {
@@ -191,6 +194,15 @@
 
 
 // RESPONSIVE ----------------------------------------------- //
+
+@media (max-width:1199.8px) {
+    .header__menu ul>li+li {
+        margin-left: 35px;
+    }
+    .header__lang {
+        margin-left: 60px;
+    }
+}
 
 @media (max-width:991.8px) {
     .header__lang {

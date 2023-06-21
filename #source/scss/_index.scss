@@ -101,14 +101,22 @@
         &+p {
             margin-top: 30px;
         }
+
+        &:last-child {
+            margin-top: 0px;
+        }
     }
 
-    span {
+    strong {
         display: inline-block;
         color: #005C47;
         margin-top: 10px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 180%;
 
-        &+span {
+        &+strong {
             margin-left: 20px;
         }
     }
@@ -164,7 +172,7 @@
     width: 100%;
     max-width: 380px;
     margin: 50px auto 0;
-    height: 276px;
+    height: 300px;
 
     img {
         width: 100px;
@@ -247,6 +255,10 @@
     align-items: center;
     justify-content: center;
     color: #FFFFFF;
+
+    span {
+        text-align: center;
+    }
 
     &:hover {
         color: #fff;
@@ -354,6 +366,109 @@
 .col-lg-6:nth-child(even) {
     .how__col {
         padding-left: 20px;
+    }
+}
+
+// certificates section --------------------------------------- //
+
+.certificates {
+    padding-bottom: 100px;
+}
+
+.certificates__title h2 {
+    @include secttitle;
+    margin-bottom: 50px;
+}
+
+.certificates__slider {
+    position: relative;
+
+    .slick-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        width: 36px;
+        height: 36px;
+        background-size: cover;
+        font-size: 0;
+        cursor: pointer;
+        transition: .3s;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .slick-prev {
+        background-image: url(../img/svg/slider-arrow-prev.svg);
+        left: -10%;
+
+        &:hover {
+            filter: brightness(150%);
+        }
+    }
+
+    .slick-next {
+        background-image: url(../img/svg/slider-arrow-next.svg);
+        right: -10%;
+
+        &:hover {
+            filter: brightness(150%);
+        }
+    }
+}
+
+.certificates__slide {
+    padding: 0 10px;
+    width: 100%;
+    height: 345px;
+}
+
+.certificates__item {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+
+    &:hover {
+        filter: brightness(50%);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+}
+
+.certificates__button {
+    text-align: center;
+    margin-top: 40px;
+
+    a {
+        display: inline-block;
+        font-family: 'MyriadPro';
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 160%;
+        color: #FFFFFF;
+        padding: 9px 49px;
+        background: #005C47;
+        border-radius: 5px;
+        transition: .5s;
+
+        &:hover {
+            transform: translateY(-5px);
+            filter: brightness(80%);
+        }
     }
 }
 
@@ -595,8 +710,9 @@
     font-size: 40px;
     line-height: 160%;
     text-align: center;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
     color: #121212;
+    max-width: 350px;
 }
 
 .popup__form {
@@ -625,7 +741,36 @@
         font-weight: 300;
         font-size: 14px;
         line-height: 160%;
+        font-family: 'MyriadPro';
         color: #626262;
+
+        &::placeholder {
+            font-size: 14px;
+            line-height: 160%;
+            color: #626262;
+            transition: .3s .1s;
+        }
+
+        &:focus::placeholder,
+        &:active::placeholder {
+            opacity: 0;
+        }
+    }
+
+    textarea {
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0px 0px 16px rgba(140, 140, 140, 0.15);
+        font-family: 'MyriadPro';
+        border-radius: 6px;
+        padding: 15px 20px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 160%;
+        color: #626262;
+        resize: none;
+        outline: none;
+        height: 90px;
 
         &::placeholder {
             font-size: 14px;
@@ -670,6 +815,7 @@
         font-size: 24px;
     }
 
+    .certificates__slider,
     .products__slider {
         .slick-prev {
             left: -5%;
@@ -687,6 +833,7 @@
 }
 
 @media (max-width:1399.8px) {
+    .certificates__slider,
     .products__slider {
         margin: 0 auto;
         width: 95%;
@@ -698,6 +845,12 @@
 }
 
 
+@media (max-width:1199.8px) {
+    .certificates__slide {
+        padding: 0 7px;
+        height: 320px;
+    }
+}
 @media (max-width:991.8px) {
     .request__content h2 {
         font-size: 36px;
@@ -748,6 +901,7 @@
         font-size: 36px;
     }
 
+    .certificates__slider,
     .products__slider {
         .slick-arrow {
             width: 30px;
@@ -767,11 +921,16 @@
         padding: 0 5px;
         height: 300px;
     }
+    .certificates__slide{
+        padding: 0 5px;
+        height: 280px;
+    }
 
     .products__item {
         font-size: 20px;
     }
 
+    .certificates__slider,
     .products__slider {
         width: 90%;
     }
@@ -836,18 +995,26 @@
 }
 
 @media (min-width:767.9px) {
+
+    .certificates__slider.left-padding,
     .products__slider.left-padding {
         padding-left: 0 !important;
     }
 }
 
 @media (max-width:767.8px) {
-    .partners{
-        .container{
+    .certificates {
+        padding-bottom: 80px;
+    }
+    .certificates,
+    .products,
+    .partners {
+        .container {
             max-width: 100%;
             padding: 0;
         }
     }
+
     .how {
         padding: 80px 0;
     }
@@ -875,16 +1042,11 @@
         margin-top: 15px;
     }
 
+    .certificates__slider,
     .products__slider {
         width: 100%;
     }
 
-    .products {
-        .container {
-            padding: 0;
-            max-width: 100%;
-        }
-    }
 
     .advantages__item {
         height: 250px;
@@ -950,6 +1112,10 @@
         input {
             padding: 15px 18px;
         }
+
+        textarea {
+            max-width: 420px;
+        }
     }
 
     .popup__close {
@@ -996,9 +1162,27 @@
 }
 
 @media (max-width:374.8px) {
+    .certificates__slide {
+        height: 250px;
+    }
+    .advantages__item {
+        padding: 20px 9px;
+        margin: 12px auto 0;
+    }
+
+    .advantages__inner .col-6 {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .advantages__item p {
+        font-size: 11px;
+    }
+
     .contacts__content {
         max-width: 95%;
     }
+
     .contact-field p {
         font-size: 13px;
         padding: 0px 10px;

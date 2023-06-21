@@ -1,0 +1,84 @@
+.certificates-page {
+    padding: 170px 0 80px;
+
+    .row>* {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+.certificates-page__title {
+    margin-bottom: 40px;
+    @include secttitle;
+
+    h1 {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 160%;
+    }
+}
+
+.certificates-page__item {
+    margin-bottom: 20px;
+    width: 100%;
+    display: block;
+    height: 345px;
+
+    img {
+        border-radius: 15px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
+
+//  RESPONSIVE ------------------------------------- //
+@media (max-width:1399.8px) {
+    .certificates-page__item {
+        height: 300px;
+    }
+
+    .certificates-page {
+        padding: 145px 0 80px;
+    }
+}
+
+@media (max-width:1199.8px) {
+    .certificates-page {
+        padding: 130px 0 70px;
+    }
+
+    .certificates-page__item {
+        height: 270px;
+    }
+}
+
+@media (max-width:991.8px) {
+    .certificates-page {
+        padding: 100px 0 70px;
+    }
+
+    .certificates-page__item {
+        height: 250px;
+    }
+}
+
+@media (max-width:767.8px) {
+    .certificates-page__item {
+        height: 250px;
+    }
+}
+
+@media (max-width:575.8px) {
+    .certificates-page {
+        padding: 100px 0 60px;
+    }
+
+    .certificates-page__item {
+        max-width: 320px;
+        margin: 0 auto 20px;
+    }
+}
